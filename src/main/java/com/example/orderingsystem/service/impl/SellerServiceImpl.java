@@ -13,7 +13,7 @@ public class SellerServiceImpl implements SellerService {
 	private SellerInfoRepository repository;
 
 	@Override
-	public SellerInfo findOne(Integer sellerId) {
+	public SellerInfo findOne(Long sellerId) {
 		return repository.findById(sellerId).orElse(null);
 	}
 

@@ -18,7 +18,7 @@ public class SellerInfoRepositoryTest {
 	@Test
 	public void saveTest(){
 		SellerInfo sellerInfo = new SellerInfo();
-		sellerInfo.setSellerId(123456);
+		sellerInfo.setSellerId(123456L);
 		sellerInfo.setUsername("老王");
 		sellerInfo.setPassword("123456");
 		sellerInfo.setPhone("12345678910");
@@ -37,7 +37,7 @@ public class SellerInfoRepositoryTest {
 
 	@Test
 	public void findBySellIdTest(){
-		SellerInfo sellerInfo = repository.findById(123456).orElse(null);
+		SellerInfo sellerInfo = repository.findById(123456L).orElse(null);
 		System.out.println(sellerInfo.getSellerName());
 		Assert.assertNotNull(sellerInfo);
 	}

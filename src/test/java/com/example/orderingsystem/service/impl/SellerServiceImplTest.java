@@ -20,7 +20,7 @@ public class SellerServiceImplTest {
 	@Test
 	public void saveTest(){
 		SellerInfo sellerInfo = new SellerInfo();
-		sellerInfo.setSellerId(123456);
+		sellerInfo.setSellerId(123456L);
 		sellerInfo.setUsername("老王");
 		sellerInfo.setPassword("123456");
 		sellerInfo.setPhone("12345678910");
@@ -34,13 +34,13 @@ public class SellerServiceImplTest {
 		sellerInfo.setStoreImage("http://xxxStore.com");
 
 		SellerInfo result = sellerService.save(sellerInfo);
-		Assert.assertEquals(new Integer(123456), result.getSellerId());
+		Assert.assertEquals(new Long(123456L), result.getSellerId());
 	}
 
 	@Test
 	public void findOne() {
-		SellerInfo sellerInfo = sellerService.findOne(123456);
-		Assert.assertEquals(new Integer(123456), sellerInfo.getSellerId());
+		SellerInfo sellerInfo = sellerService.findOne(123456L);
+		Assert.assertEquals(new Long(123456L), sellerInfo.getSellerId());
 	}
 
 

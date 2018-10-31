@@ -13,7 +13,7 @@ import java.util.Date;
 public class SellerInfo {
 
 	@Id
-	private Integer sellerId;
+	private Long sellerId;
 
 	private String username;
 

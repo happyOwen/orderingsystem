@@ -18,7 +18,7 @@ public class SellerController {
 	private SellerService sellerService;
 
 	@GetMapping("/seller")
-	public ResultVO seller(@RequestParam(value = "sellerId", defaultValue = "123456") Integer sellerId){
+	public ResultVO seller(@RequestParam(value = "sellerId", defaultValue = "123456L") Long sellerId){
 		SellerInfo sellerInfo = sellerService.findOne(sellerId);
 		SellerInfoVO sellerInfoVO = new SellerInfoVO();
 		BeanUtils.copyProperties(sellerInfo, sellerInfoVO);
@@ -26,7 +26,7 @@ public class SellerController {
 	}
 
 	@GetMapping("/test")
-	public String test(@RequestParam(value = "sellerId", defaultValue = "123456") Integer sellerId){
+	public String test(@RequestParam(value = "sellerId", defaultValue = "123456L") Long sellerId){
 		SellerInfo sellerInfo = sellerService.findOne(sellerId);
 
 		return sellerInfo.getSellerName();
